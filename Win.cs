@@ -90,5 +90,10 @@ namespace CAPTCHATest
             else
                 MessageBox.Show("Неправильно!");
         }
+
+        private void Win_Load(object sender, EventArgs e)
+        {
+            pictureBox.Image = CreateImage(pictureBox.Width, pictureBox.Height);
+        }
     }
 }
