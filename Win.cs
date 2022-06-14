@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CAPTCHATest
@@ -27,8 +21,8 @@ namespace CAPTCHATest
             Bitmap result = new Bitmap(width, height);
 
             // Случайная позиция текста
-            int Xpos = random.Next(0, width - 80);
-            int Ypos = random.Next(24, height - 24);
+            int Xpos = checkBoxFix.Checked ? width / 5 : random.Next(0, width / 2);
+            int Ypos = checkBoxFix.Checked ? height / 8 : random.Next(0, height / 4);
 
             // Цвета для тектса
             Brush[] colors =
@@ -50,18 +44,18 @@ namespace CAPTCHATest
             if (checkBoxLetters.Checked)
             {
                 string ALF = "1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
-                    for (int i = 0; i < 5; i++)
-                        text += ALF[random.Next(ALF.Length)];
+                for (int i = 0; i < 4; i++)
+                    text += ALF[random.Next(ALF.Length)];
             }
             else
             {
-                text = random.Next(10000, 99999).ToString();
+                text = random.Next(1000, 9999).ToString();
             }
 
             // Рисует текст
             g.DrawString(
                 text,
-                new Font("Arial", 24),
+                new Font("Arial", 36),
                 colors[random.Next(colors.Length)],
                 new PointF(Xpos, Ypos));
 

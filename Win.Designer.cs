@@ -33,6 +33,7 @@
             this.buttonGeneration = new System.Windows.Forms.Button();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.checkBoxLetters = new System.Windows.Forms.CheckBox();
+            this.checkBoxFix = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,18 +82,29 @@
             this.checkBoxLetters.Text = "Нужны буквы?";
             this.checkBoxLetters.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // checkBoxFix
+            // 
+            this.checkBoxFix.AutoSize = true;
+            this.checkBoxFix.Location = new System.Drawing.Point(137, 12);
+            this.checkBoxFix.Name = "checkBoxFix";
+            this.checkBoxFix.Size = new System.Drawing.Size(96, 17);
+            this.checkBoxFix.TabIndex = 5;
+            this.checkBoxFix.Text = "Фиксировать";
+            this.checkBoxFix.UseVisualStyleBackColor = true;
+            // 
+            // Win
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(243, 175);
+            this.Controls.Add(this.checkBoxFix);
             this.Controls.Add(this.checkBoxLetters);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.buttonGeneration);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.pictureBox);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Win";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Капча";
@@ -109,6 +121,7 @@
         private System.Windows.Forms.Button buttonGeneration;
         private System.Windows.Forms.Button buttonCheck;
         private System.Windows.Forms.CheckBox checkBoxLetters;
+        private System.Windows.Forms.CheckBox checkBoxFix;
     }
 }
 
